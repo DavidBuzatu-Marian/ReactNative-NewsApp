@@ -8,6 +8,7 @@ export const COLORS = {
 
   // colors
   gray: '#2D3038',
+  lightGray: '#cfd4d7',
   black: '#1E1B26',
   white: '#FFFFFF',
   blue: '#3a60da',
@@ -21,6 +22,8 @@ export const SIZES = {
   font: 16,
   radius: 12,
   padding: 24,
+  margin32: 32,
+  margin: 16,
   padding2: 36,
 
   // font sizes
@@ -44,7 +47,7 @@ export const FONTS = {
     fontSize: SIZES.largeTitle,
     lineHeight: 55,
   },
-  h1: {fontFamily: 'Poppins-Black', fontSize: SIZES.h1, lineHeight: 36},
+  h1: {fontFamily: 'Poppins-Bold', fontSize: SIZES.h1, lineHeight: 36},
   h2: {fontFamily: 'Poppins-Bold', fontSize: SIZES.h2, lineHeight: 30},
   h3: {fontFamily: 'Poppins-Bold', fontSize: SIZES.h3, lineHeight: 22},
   h4: {fontFamily: 'Poppins-Bold', fontSize: SIZES.h4, lineHeight: 22},

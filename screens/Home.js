@@ -31,6 +31,31 @@ const Home = () => {
     },
   ];
 
+  const categoriesData = [
+    {
+      id: 1,
+      categoryName: 'Technology',
+      articles: [],
+    },
+    {
+      id: 2,
+      categoryName: 'Sport',
+      articles: [],
+    },
+    {
+      id: 3,
+      categoryName: 'Culture',
+      articles: [],
+    },
+    {
+      id: 4,
+      categoryName: 'Business',
+      articles: [],
+    },
+  ];
+
+  const [categories, setCategories] = React.useState(categoriesData);
+  const [selectedCategory, setSelectedCategoy] = React.useState(1);
   const renderHeader = () => {
     return (
       <View
@@ -159,6 +184,38 @@ const Home = () => {
     );
   };
 
+  const renderCategoryHeader = () => {
+    const renderItem = ({item}) => {
+      return (
+        <TouchableOpacity
+          style={{flex: 1, marginRight: SIZES.padding}}
+          onPress={() => setSelectedCategoy(item.id)}>
+          {selectedCategory == item.id ? (
+            <Text style={{...FONTS.h2, color: COLORS.blue}}>
+              {item.categoryName}
+            </Text>
+          ) : (
+            <Text style={{...FONTS.h2, color: COLORS.lightGray}}>
+              {item.categoryName}
+            </Text>
+          )}
+        </TouchableOpacity>
+      );
+    };
+
+    return (
+      <View
+        style={{flex: 1, marginLeft: SIZES.padding, marginTop: SIZES.margin32}}>
+        <FlatList
+          data={categories}
+          showsHorizontalScrollIndicator={false}
+          renderItem={renderItem}
+          keyExtractor={(item) => `${item.id}`}
+          horizontal
+        />
+      </View>
+    );
+  };
   return (
     <SafeAreaView>
       {/* HeaderSection  */}
@@ -167,6 +224,11 @@ const Home = () => {
       {/* Body Section */}
       <ScrollView style={{marginTop: SIZES.base}}>
         <View>{renderArticlesSection(articles)}</View>
+      </ScrollView>
+
+      {/* Categories  */}
+      <ScrollView style={{marginTop: SIZES.base}}>
+        <View>{renderCategoryHeader()}</View>
       </ScrollView>
     </SafeAreaView>
   );

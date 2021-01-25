@@ -14,6 +14,11 @@ export const COLORS = {
   blue: '#3a60da',
   lightBlue: '#eff5ff',
   lightBlue2: '#cbe6fe',
+
+  darkRed: '#31262F',
+  lightRed: '#C5505E',
+  darkGreen: '#213432',
+  lightGreen: '#31Ad66',
 };
 
 export const SIZES = {
